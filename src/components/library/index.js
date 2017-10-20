@@ -101,20 +101,19 @@ export const Timestamp = styled.span`
 
 export const Content = styled.div`max-width: 64em;`;
 
-export const InputWrapper = styled.div`
-position: fixed;
-bottom: 0;
-left: 0;
-right: 0;
-display: flex;
-align-items: center;
-justify-content: center;
-height: ${composer_height_base};
-padding: 0;
-border-top: 1px solid ${transparentize(0.95, color_content)};
-background-color: ${transparentize(0.5, color_content_background)};
--webkit-backdrop-filter: blur(10px);
-}
+export const InputWrapper = styled.form`
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: ${composer_height_base};
+  padding: 0;
+  border-top: 1px solid ${transparentize(0.95, color_content)};
+  background-color: ${transparentize(0.5, color_content_background)};
+  -webkit-backdrop-filter: blur(10px);
 `;
 
 export const TextArea = styled.textarea.attrs({

@@ -1,9 +1,9 @@
 import { h, Component } from "preact";
 import { connect } from "preact-redux";
-import { MessagesList } from "./library";
+import { MessagesList, MessageGroupHeader } from "./library";
 import SingleMessage from "./SingleMessage";
 import Input from "./Input";
-
+import _ from "lodash";
 class MessageContainer extends Component {
   constructor() {
     super();
@@ -11,18 +11,25 @@ class MessageContainer extends Component {
   }
 
   render({ messages }, state) {
-    messages = [{ sender: "sender", timestamp: "9:00", content: "content" }];
     console.log(messages);
     return (
       <MessagesList>
+        <MessageGroupHeader>Conversation</MessageGroupHeader>
         {messages &&
-          messages.map(item => (
-            <SingleMessage
-              sender={item.sender}
-              timestamp={item.timestamp}
-              content={item.content}
-            />
-          ))}
+          messages.map((item, i) => {
+            // const header =
+            //   i === 0 ||
+            //   (messages[i - 1] && messages[i - 1].sender !== item.sender);
+
+            return (
+              <SingleMessage
+                sender={item.nickname}
+                timestamp={item.timestamp}
+                content={item.message}
+                header={item.nickname !== ""}
+              />
+            );
+          })}
         <Input />
       </MessagesList>
     );

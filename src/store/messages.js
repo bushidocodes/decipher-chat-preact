@@ -6,7 +6,7 @@ const RECEIVE_MESSAGE = "RECEIVE_MESSAGE";
 
 // Action Creators
 export const receiveMessage = newMessage => {
-  type: RECEIVE_MESSAGE, newMessage;
+  return { type: RECEIVE_MESSAGE, newMessage };
 };
 
 // Reducer

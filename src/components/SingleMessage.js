@@ -7,13 +7,15 @@ import {
   Content
 } from "./library";
 
-function SingleMessage({ sender, timestamp, content }) {
+function SingleMessage({ sender, timestamp, content, header }) {
   return (
     <Message>
-      <MessageHeader>
-        <Sender>{sender}</Sender>
-        <Timestamp>{timestamp}</Timestamp>
-      </MessageHeader>
+      {header && (
+        <MessageHeader>
+          <Sender>{sender}</Sender>
+          <Timestamp>{timestamp}</Timestamp>
+        </MessageHeader>
+      )}
       <Content>{content}</Content>
     </Message>
   );
