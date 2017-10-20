@@ -1,6 +1,7 @@
 import { h, Component } from "preact";
 import { connect } from "preact-redux";
-import { MessagesList, Message } from "./library";
+import { MessagesList } from "./library";
+import SingleMessage from "./SingleMessage";
 
 class MessageContainer extends Component {
   constructor() {
@@ -9,14 +10,18 @@ class MessageContainer extends Component {
   }
 
   render({ messages }, state) {
+    messages = [
+      { sender: "sender", timestamp: "timestamp", content: "content" }
+    ];
+    console.log(messages);
     return (
       <MessagesList>
         {messages &&
           messages.map(item => (
-            <Message
+            <SingleMessage
               sender={item.sender}
               timestamp={item.timestamp}
-              content={content}
+              content={item.content}
             />
           ))}
       </MessagesList>

@@ -35,7 +35,7 @@ html, body {
 `;
 
 export const MessagesList = styled.ul`
-  padding: 0 0 (composer_height_base + padding_base);
+  padding: 0 0 (${composer_height_base} + ${padding_base});
   margin: 0 auto;
   max-width: $app-max-width;
 `;
@@ -57,8 +57,8 @@ export const MessageGroupHeader = styled.header`
 export const Message = styled.li`
   list-style: none;
   border-radius: 2px;
-  padding: $padding-base / 2 $padding-base;
-  font-size: $font-size-sm;
+  padding: padding_base / 2 padding_base;
+  font-size: font_size_sm;
   color: color_content;
   transition: all 0.1s ease;
 
@@ -72,8 +72,10 @@ export const MessageHeader = styled.header`
   align-items: space-between;
   justify-content: space-between;
   flex-direction: row;
-  margin-bottom: $padding-base / 2;
-  margin-left: -$padding-base / 2;
+  margin-bottom: padding_base / 2;
+  margin-left: -padding_base / 2;
+  margin-top: $padding-base;
+  padding-bottom: $padding-base;
 `;
 
 export const Sender = styled.h1`
@@ -83,8 +85,9 @@ export const Sender = styled.h1`
   letter-spacing: 0.03em;
   margin: 0 0 -2px 0;
   border-radius: 100px;
-  padding: 1px $padding-base;
+  padding: 1px padding_base;
   color: #fff;
+  background-color: blue;
 `;
 
 export const Timestamp = styled.span`

@@ -1,6 +1,13 @@
-import { MessageGroupHeader, Message } from "./library";
+import {
+  MessageGroupHeader,
+  Message,
+  MessageHeader,
+  Sender,
+  Timestamp,
+  Content
+} from "./library";
 
-function Message({ sender, timestamp, content }) {
+function SingleMessage({ sender, timestamp, content }) {
   return (
     <Message>
       <MessageHeader>
@@ -11,3 +18,5 @@ function Message({ sender, timestamp, content }) {
     </Message>
   );
 }
+
+export default SingleMessage;
