@@ -10,11 +10,6 @@ class MessageContainer extends Component {
     this.state = {};
   }
 
-  // do not show header (set showHeadler to false ) if
-  // item.nickname is "" or  (item.sender === previousItem.sender)
-
-  // show header if item.nickname is not "" and  && item.sender !== previousItem.sender
-
   render({ messages = [] }, state) {
     return (
       <MessagesList>
