@@ -10,26 +10,30 @@ class MessageContainer extends Component {
     this.state = {};
   }
 
-  render({ messages }, state) {
-    console.log(messages);
+  render({ messages = [] }, state) {
     return (
       <MessagesList>
         <MessageGroupHeader>Conversation</MessageGroupHeader>
-        {messages &&
-          messages.map((item, i) => {
-            // const header =
-            //   i === 0 ||
-            //   (messages[i - 1] && messages[i - 1].sender !== item.sender);
+        {messages.map((item, i) => {
+          let showHeader;
 
-            return (
-              <SingleMessage
-                sender={item.nickname}
-                timestamp={item.timestamp}
-                content={item.message}
-                header={item.nickname !== ""}
-              />
-            );
-          })}
+          if (i === 0 && item.nickname !== "") showHeader = true;
+          else if (
+            item.nickname !== "" &&
+            item.nickname !== messages[i - 1].nickname
+          )
+            showHeader = true;
+          else showHeader = false;
+
+          return (
+            <SingleMessage
+              sender={item.nickname}
+              timestamp={item.timestamp}
+              content={item.message}
+              header={showHeader}
+            />
+          );
+        })}
         <Input />
       </MessagesList>
     );
