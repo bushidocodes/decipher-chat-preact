@@ -10,9 +10,7 @@ class MessageContainer extends Component {
   }
 
   render({ messages }, state) {
-    messages = [
-      { sender: "sender", timestamp: "timestamp", content: "content" }
-    ];
+    messages = [{ sender: "sender", timestamp: "9:00", content: "content" }];
     console.log(messages);
     return (
       <MessagesList>

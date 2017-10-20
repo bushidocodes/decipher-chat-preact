@@ -11,10 +11,10 @@ function SingleMessage({ sender, timestamp, content }) {
   return (
     <Message>
       <MessageHeader>
-        <Sender>Test</Sender>
-        <Timestamp>9:00pm</Timestamp>
+        <Sender>{sender}</Sender>
+        <Timestamp>{timestamp}</Timestamp>
       </MessageHeader>
-      <Content>Test content stuff hello</Content>
+      <Content>{content}</Content>
     </Message>
   );
 }
