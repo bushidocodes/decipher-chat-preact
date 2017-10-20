@@ -1,4 +1,4 @@
-function SendButton() {
+function SendArrow() {
   return (
     <svg
       width="34px"
@@ -40,4 +40,4 @@ function SendButton() {
   );
 }
 
-export default SendButton;
+export default SendArrow;

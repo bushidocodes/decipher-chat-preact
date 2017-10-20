@@ -2,7 +2,7 @@ import { h, Component } from "preact";
 import { connect } from "preact-redux";
 import { fetchMessages } from "../store";
 import { Submit, TextArea, InputWrapper } from "./library";
-import SendButton from "./library/SendButton";
+import SendArrow from "./library/SendArrow";
 
 class Input extends Component {
   constructor() {
@@ -18,14 +18,15 @@ class Input extends Component {
     socket.emit("chat message", messageObject);
   };
   onChange = e => {
+    console.log(e.target.value);
     this.setState({ message: e.target.value });
   };
   render() {
     return (
       <InputWrapper>
-        <TextArea />
-        <Submit onChange={this.onChange}>
-          <SendButton />
+        <TextArea onChange={this.onChange} />
+        <Submit onSubmit={this.onSubmit}>
+          <SendArrow />
         </Submit>
       </InputWrapper>
     );
