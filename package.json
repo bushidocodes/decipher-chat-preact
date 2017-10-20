@@ -13,7 +13,9 @@
   "eslintConfig": {
     "extends": "eslint-config-synacor"
   },
-  "eslintIgnore": ["build/*"],
+  "eslintIgnore": [
+    "build/*"
+  ],
   "devDependencies": {
     "eslint": "^4.5.0",
     "eslint-config-synacor": "^1.1.0",
@@ -21,10 +23,17 @@
     "preact-cli": "^2.0.0"
   },
   "dependencies": {
+    "axios": "^0.16.2",
     "linkstate": "^1.1.0",
     "preact": "^8.2.1",
     "preact-compat": "^3.17.0",
     "preact-redux": "^2.0.3",
-    "preact-router": "^2.5.5"
+    "preact-router": "^2.5.5",
+    "redux": "^3.7.2",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0",
+    "socket.io": "^2.0.3",
+    "styled-components": "^2.2.1"
   }
 }
