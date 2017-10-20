@@ -18,10 +18,10 @@ const sender_color_1 = "#DA4297";
 const sender_color_2 = " #00ab2a";
 const sender_color_3 = "#0023C0";
 
-const app_max_width = padding_base * 80;
+const app_max_width = parseInt(padding_base, 10) * 80 + "px";
 
-const composer_height_base = padding_base * 6.5;
-const composer_submit_button_width = padding_base * 7;
+const composer_height_base = parseInt(padding_base, 10) * 6.5 + "px";
+const composer_submit_button_width = parseInt(padding_base, 10) * 7 + "px";
 
 injectGlobal`
 html, body {
@@ -60,7 +60,7 @@ export const Message = styled.li`
   border-radius: 2px;
   padding: ${parseInt(padding_base, 10) / 2 + "px "} ${padding_base};
   font-size: ${font_size_sm};
-  color: color_content;
+  color: ${color_content};
   transition: all 0.1s ease;
 
   &:hover {
@@ -117,9 +117,11 @@ background-color: ${transparentize(0.5, color_content_background)};
 }
 `;
 
-export const TextArea = styled.textarea`
-  flex: 1 1 calc(${app_max_width} - ${composer_submit_button_width})};
-  height: ${composer_height_base} - ${parseInt(padding_base, 10) * 2 + "px "};
+export const TextArea = styled.textarea.attrs({
+  placeholder: "Message"
+})`flex: 1 1 calc(${app_max_width} - ${composer_submit_button_width})};
+  height:  calc(${composer_height_base} - ${parseInt(padding_base, 10) * 2 +
+  "px "});
   font-family: inherit;
   max-width: calc(${app_max_width} - ${composer_submit_button_width})};
   padding: ${padding_base};
