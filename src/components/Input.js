@@ -1,7 +1,8 @@
 import { h, Component } from "preact";
 import { connect } from "preact-redux";
 import { fetchMessages } from "../store";
-import { MessagesList, Message } from "./library";
+import { Submit, TextArea, InputWrapper } from "./library";
+import SendButton from "./library/SendButton";
 
 class Input extends Component {
   constructor() {
@@ -20,7 +21,14 @@ class Input extends Component {
     this.setState({ message: e.target.value });
   };
   render() {
-    <input value={this.state.message} onChange={this.onChange} />;
+    return (
+      <InputWrapper>
+        <TextArea />
+        <Submit onChange={this.onChange}>
+          <SendButton />
+        </Submit>
+      </InputWrapper>
+    );
   }
 }
 

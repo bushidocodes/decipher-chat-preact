@@ -2,6 +2,7 @@ import { h, Component } from "preact";
 import { connect } from "preact-redux";
 import { MessagesList } from "./library";
 import SingleMessage from "./SingleMessage";
+import Input from "./Input";
 
 class MessageContainer extends Component {
   constructor() {
@@ -22,6 +23,7 @@ class MessageContainer extends Component {
               content={item.content}
             />
           ))}
+        <Input />
       </MessagesList>
     );
   }
